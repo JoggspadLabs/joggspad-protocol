@@ -1,0 +1,32 @@
+{
+  "chain": {
+    "state": "stated",
+    "name": "Solana",
+    "cluster": "mainnet-beta",
+    "llamaSlug": "solana",
+    "dexTag": "solana",
+    "genesisHash": "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d",
+    "source": "client statement",
+    "statedOn": "2026-10-06",
+    "scope": "batch-level"
+  },
+  "rpc": {
+    "state": "stated",
+    "url": "https://solana-rpc.publicnode.com",
+    "source": "client statement",
+    "statedOn": "2026-10-06",
+    "scope": "batch-level"
+  },
+  "contract": {
+    "state": "absent",
+    "address": null
+  },
+  "x": {
+    "state": "absent",
+    "url": null
+  },
+  "github": {
+    "state": "absent",
+    "url": null
+  }
+}

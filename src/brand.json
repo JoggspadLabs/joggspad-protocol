@@ -1,0 +1,117 @@
+{
+ "source": {
+  "file": "brand/LOGO JOGGSPAD PNG...png",
+  "ihdr": {
+   "w": 2000,
+   "h": 2000,
+   "depth": 8,
+   "ct": 6,
+   "interlace": 0
+  },
+  "bbox": {
+   "x": 641,
+   "y": 477,
+   "w": 721,
+   "h": 1049
+  },
+  "pureBlackTransparentPixels": 3543099,
+  "premultiplied": true
+ },
+ "palette": [
+  {
+   "name": "lime",
+   "hex": "#e8ff55",
+   "src": "brand/LOGO JOGGSPAD PNG.png",
+   "x": 0,
+   "y": 0,
+   "role": "brand fill, 88.7% of the mark tile"
+  },
+  {
+   "name": "ink",
+   "hex": "#0a0a0b",
+   "src": "brand/LOGO JOGGSPAD PNG.png",
+   "x": 1205,
+   "y": 489,
+   "role": "logo glyph, 11.1% of the mark tile"
+  },
+  {
+   "name": "lime-hi",
+   "hex": "#f5f85d",
+   "src": "reference/SAMPUL JOGGSPAD JPG.jpg.jpeg",
+   "x": 1212,
+   "y": 225,
+   "role": "highlight in the cover headline"
+  },
+  {
+   "name": "bg",
+   "hex": "#0c0c0c",
+   "src": "reference/SAMPUL JOGGSPAD JPG.jpg.jpeg",
+   "x": 44,
+   "y": 0,
+   "role": "cover field, 53.7%"
+  },
+  {
+   "name": "deep",
+   "hex": "#181d0d",
+   "src": "reference/SAMPUL JOGGSPAD JPG.jpg.jpeg",
+   "x": 1166,
+   "y": 0,
+   "role": "cover glow falloff, 19.3%"
+  },
+  {
+   "name": "olive",
+   "hex": "#2a3111",
+   "src": "reference/SAMPUL JOGGSPAD JPG.jpg.jpeg",
+   "x": 1249,
+   "y": 114,
+   "role": "cover glow, 11.1%"
+  },
+  {
+   "name": "olive-2",
+   "hex": "#586813",
+   "src": "reference/JOGGSPAD 5.jpg.jpeg",
+   "x": 35,
+   "y": 741,
+   "role": "scene glow mid"
+  },
+  {
+   "name": "olive-3",
+   "hex": "#98ae1c",
+   "src": "reference/JOGGSPAD 4.jpg.jpeg",
+   "x": 1129,
+   "y": 619,
+   "role": "scene glow bright"
+  },
+  {
+   "name": "void",
+   "hex": "#020701",
+   "src": "reference/JOGGSPAD 1.jpg.jpeg",
+   "x": 585,
+   "y": 48,
+   "role": "scene shadow, 44.6%"
+  },
+  {
+   "name": "white",
+   "hex": "#fdfdfd",
+   "src": "reference/SAMPUL JOGGSPAD JPG.jpg.jpeg",
+   "x": 414,
+   "y": 133,
+   "role": "cover headline white"
+  },
+  {
+   "name": "grey",
+   "hex": "#c1c1c1",
+   "src": "reference/SAMPUL JOGGSPAD JPG.jpg.jpeg",
+   "x": 1340,
+   "y": 444,
+   "role": "cover url text"
+  }
+ ],
+ "glyph": {
+  "viewBox": "0 0 180.25 262.25",
+  "d": "M140 0.3L146.8 0.1L153.5 1.1L158.5 2.7L165.3 6.5L170 10.6L174 15.3L177.3 21.1L179.6 28.5L180.4 36.3L180.4 174.5L180 180.7L179.2 186.8L178 193L176 200L172.1 210L168.5 216.7L164.5 223L158.3 231L152.4 237L144.5 243.8L137 248.9L130.1 252.8L122 256.4L113.8 259.1L107.3 260.6L97.8 262L89 262.3L81 261.8L71.3 260.3L63.3 258.1L57.3 256L50 252.8L44.3 249.6L38.8 246.1L32.5 241.4L27.3 236.6L22.3 231.5L18.5 227L14.6 221.5L10.7 215.3L7.9 209.8L5.2 203.3L2.8 195.7L1.2 188.3L0.4 182.5L0.2 176.5L0.6 176.8L3.2 183L7.1 189.5L10.7 194.3L16.7 200.3L21.3 203.8L28.1 207.8L35.1 210.5L41.8 212.1L48 212.9L54.8 212.8L62.5 211.7L70.5 209.4L78 205.8L84 201.8L90.3 196.3L94.3 191.6L98.3 185.6L101.8 178.5L104.5 169.8L105.8 161.3L106.5 36.8L107.5 29.6L109.5 23.5L111.5 19.5L114.3 15.3L118.5 10.5L122.4 7.3L128.2 3.8L134.3 1.4ZM44 110.5L49.3 110.3L53.8 110.7L58.2 111.5L62.3 112.7L69.5 115.9L76.4 120.8L80.1 124.3L82.4 127L84.4 129.8L87.1 134.5L88.8 138.3L90.3 143L91.6 151.5L91.6 157L91.1 161L90.3 165.3L89.1 169.3L85.6 176.8L83.1 180.5L80 184.3L76.3 188L73.5 190.3L68.7 193.5L64.8 195.5L60.8 197.1L56.4 198.3L52.3 199L47.5 199.4L40.1 199L35.9 198.3L31.8 197L24.5 193.8L19.7 190.8L16.6 188.3L13.5 185.2L10.8 181.9L8 177.8L6 174.2L3.2 166.5L1.9 158.8L1.9 153.5L2.4 148.8L4.3 141.3L6.3 136.5L8.8 132.1L13.1 126.3L16.3 122.9L19.4 120.3L22.8 117.8L26.8 115.5L32 113.2L36 111.9Z"
+ },
+ "favicon": {
+  "d": "M19.99 5.52L21.07 5.59L22.02 6.02L22.72 6.73L23.16 7.78L23.23 19.47L22.88 21.52L22.28 22.86L21.46 23.99L20.35 25.02L19.2 25.74L17.89 26.25L16.61 26.48L15.27 26.46L13.85 26.17L11.89 25.21L10.27 23.68L9.2 21.78L8.8 19.63L9.35 20.67L10.12 21.54L11.03 22.14L12.13 22.48L13.17 22.54L14.43 22.26L15.51 21.66L16.33 20.84L16.93 19.79L17.26 18.41L17.39 7.87L17.71 7.06L18.27 6.34L19.05 5.8ZM12.3 14.35L13.77 14.52L14.9 15.17L15.76 16.27L16.12 17.63L15.92 19.05L15.19 20.26L13.97 21.15L12.59 21.47L11.33 21.28L10.12 20.57L9.26 19.45L8.94 18.21L9.13 16.81L9.84 15.61L10.93 14.75Z"
+ }
+}

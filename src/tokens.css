@@ -1,0 +1,71 @@
+/* Single home for every color literal.
+   Provenance: k-means over brand/ and reference/ assets, each centroid snapped to the nearest real
+   pixel. Coordinates (x,y) are in the source file; the full record is in src/brand.json.
+   Everything below the literals is derived with color-mix from these values, never typed again. */
+:root {
+  --lime: #e8ff55;      /* brand/LOGO JOGGSPAD PNG.png (0,0): mark tile fill, 88.7% */
+  --ink: #0a0a0b;       /* brand/LOGO JOGGSPAD PNG.png (1205,489): glyph, 11.1% */
+  --lime-hi: #f5f85d;   /* reference/SAMPUL JOGGSPAD JPG (1212,225): headline highlight */
+  --bg: #0c0c0c;        /* SAMPUL (44,0): cover field, 53.7% */
+  --deep: #181d0d;      /* SAMPUL (1166,0): glow falloff, 19.3% */
+  --olive: #2a3111;     /* SAMPUL (1249,114): glow, 11.1% */
+  --olive-2: #586813;   /* reference/JOGGSPAD 5 (35,741): scene glow mid */
+  --olive-3: #98ae1c;   /* reference/JOGGSPAD 4 (1129,619): scene glow bright */
+  --void: #020701;      /* reference/JOGGSPAD 1 (585,48): scene shadow, 44.6% */
+  --white: #fdfdfd;     /* SAMPUL (414,133): headline white */
+  --grey: #c1c1c1;      /* SAMPUL (1340,444): url text */
+
+  --accent: var(--lime);
+  --on-accent: var(--ink);
+
+  --panel-dark: var(--bg);
+  --surface: var(--deep);
+  --surface-2: var(--olive);
+  --surface-3: var(--olive-2);
+  --fg: var(--white);
+  --fg-muted: var(--grey);
+  --fg-subtle: color-mix(in srgb, var(--grey) 62%, var(--bg));
+
+  --panel-light: var(--lime);
+  --surface-light: var(--lime-hi);
+  --surface-light-2: color-mix(in srgb, var(--ink) 9%, var(--lime));
+  --ink-muted: color-mix(in srgb, var(--ink) 76%, var(--lime));
+  --ink-subtle: color-mix(in srgb, var(--ink) 62%, var(--lime));
+
+  --a-ink-04: color-mix(in srgb, var(--white) 4%, transparent);
+  --a-ink-07: color-mix(in srgb, var(--white) 7%, transparent);
+  --a-ink-14: color-mix(in srgb, var(--white) 14%, transparent);
+  --a-ink-24: color-mix(in srgb, var(--white) 24%, transparent);
+  --a-ink-45: color-mix(in srgb, var(--white) 45%, transparent);
+  --a-dark-07: color-mix(in srgb, var(--ink) 7%, transparent);
+  --a-dark-14: color-mix(in srgb, var(--ink) 14%, transparent);
+  --a-dark-30: color-mix(in srgb, var(--void) 30%, transparent);
+  --a-dark-60: color-mix(in srgb, var(--void) 60%, transparent);
+  --a-dark-90: color-mix(in srgb, var(--bg) 90%, transparent);
+  --a-clear: transparent;
+
+  --line: var(--a-ink-07);
+  --line-strong: var(--a-ink-14);
+  --line-light: color-mix(in srgb, var(--ink) 12%, transparent);
+  --line-light-strong: color-mix(in srgb, var(--ink) 26%, transparent);
+
+  --glow: color-mix(in srgb, var(--lime) 34%, transparent);
+  --glow-dark: color-mix(in srgb, var(--ink) 24%, transparent);
+  --glow-soft: color-mix(in srgb, var(--lime) 11%, transparent);
+  --shadow-deep: color-mix(in srgb, var(--void) 62%, transparent);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-2xl: 28px;
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-display: "Barlow Condensed", "Geist", ui-sans-serif, system-ui, sans-serif;
+
+  color-scheme: dark;
+}

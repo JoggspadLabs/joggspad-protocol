@@ -1,0 +1,15 @@
+{
+  "name": "joggspad",
+  "version": "0.1.0",
+  "description": "Joggspad, a launch pad front end on Solana.",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "gates": "node tools/gates.mjs",
+    "brand": "node tools/brand-extract.mjs",
+    "serve": "node tools/serve.mjs"
+  }
+}

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joggspad | Launch pad on Solana</title>
+<meta name="description" content="Joggspad is a launch pad engineered for Solana: fair openings, scheduled vesting and hard spending ceilings, with live chain data.">
+<meta name="theme-color" content="{{THEME_COLOR}}">
+<meta http-equiv="Content-Security-Policy" content="{{CSP}}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="jp:rpc" content="{{RPC_URL}}">
+<meta name="jp:genesis" content="{{GENESIS}}">
+<meta name="jp:llama-slug" content="{{LLAMA_SLUG}}">
+<meta name="jp:dex-tag" content="{{DEX_TAG}}">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+<script src="boot.js"></script>
+</head>
+<body>
+<a class="skip" href="#overview">Skip to content</a>
+<div class="progress" aria-hidden="true"><span id="progress"></span></div>
+
+<header class="site-head dark" id="top">
+  {{CA_BLOCK}}
+  <div class="head-row wrap-wide">
+    <a class="brand" href="#top" aria-label="Joggspad, back to top">
+      <svg class="brand-glyph" viewBox="{{GLYPH_VB}}" width="20" height="28" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="{{GLYPH_D}}"/></svg>
+      <span class="brand-word">Joggspad</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#chain">Anchor</a>
+      <a href="#pulse">Pulse</a>
+      <a href="#protocol">Design</a>
+      <a href="#pairs">Pairs</a>
+      <a href="#guards">Guards</a>
+    </nav>
+    <div class="head-right">
+      <span class="pill pill-head" data-health data-state="connecting" role="status"><i class="dot" aria-hidden="true"></i><span class="pill-text">Connecting</span></span>
+      <div class="socials">{{SOCIALS}}</div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero dark" id="overview">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="hero-ghost" aria-hidden="true" data-depth="0.12">SOL</div>
+  <div class="wrap-wide hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow rise" data-reveal>Protocol &middot; Solana</p>
+      <h1 class="display-xl hero-title">
+        <span class="line" data-reveal>Launch on rails.</span>
+        <span class="line outline" data-reveal>Settle in blocks.</span>
+      </h1>
+      <p class="lede" data-reveal>Joggspad is a launch pad engineered for Solana. Fair openings, vesting that follows a schedule, and treasuries that stay inside the ceilings written for them.</p>
+      <div class="cta-row" data-reveal>
+        <a class="btn btn-solid btn-lg" href="#pulse"><span>Follow the pulse</span><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9M8.5 4 12.5 8l-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="#protocol"><span>Read the design</span></a>
+      </div>
+      <div class="hero-ticker" data-reveal>
+        <span class="label">Latest block</span>
+        <span class="ticker-num mono" data-bind="block" aria-live="off"><span class="dash">&ndash;</span></span>
+        <span class="pill" data-health data-state="connecting" role="status"><i class="dot" aria-hidden="true"></i><span class="pill-text">Connecting</span></span>
+      </div>
+    </div>
+    <div class="hero-stack" aria-hidden="true">
+      <div class="glass g1" data-depth="0.22">
+        <span class="label">Block height</span>
+        <span class="g-num mono" data-bind="block"><span class="dash">&ndash;</span></span>
+        <span class="g-bar"><i></i></span>
+      </div>
+      <div class="glass g2" data-depth="0.38">
+        <span class="label">Value locked</span>
+        <span class="g-num mono" data-bind="tvl"><span class="dash">&ndash;</span></span>
+      </div>
+      <div class="glass g3" data-depth="0.15">
+        <span class="label">Network</span>
+        <span class="g-num mono">{{CHAIN_NAME}}</span>
+        <span class="g-sub mono">mainnet-beta</span>
+      </div>
+      <div class="mark" data-depth="0.1"><svg viewBox="{{GLYPH_VB}}" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="{{GLYPH_D}}"/></svg></div>
+      <div class="orbit" data-depth="0.3"><i></i><i></i><i></i></div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track"><span>Open</span><span>Vest</span><span>Guard</span><span>Settle</span><span>Open</span><span>Vest</span><span>Guard</span><span>Settle</span><span>Open</span><span>Vest</span><span>Guard</span><span>Settle</span><span>Open</span><span>Vest</span><span>Guard</span><span>Settle</span></div>
+  </div>
+</section>
+
+<section class="panel light" id="chain">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <p class="eyebrow">01 &mdash; Anchor</p>
+      <h2 class="display-xl">Where it lives</h2>
+      <p class="sec-lede">Three facts pin this build down. Everything else on the page is read live from the chain.</p>
+    </header>
+    <div class="tiles tiles-3">
+      {{INFO_TILES}}
+    </div>
+  </div>
+</section>
+
+<section class="panel dark" id="pulse">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <p class="eyebrow">02 &mdash; Pulse</p>
+      <h2 class="display-xl">The chain,<br>breathing.</h2>
+      <p class="sec-lede">Figures stream from public endpoints and refresh while this tab stays in view. A dash means the source stayed silent.</p>
+    </header>
+    <div class="tiles tiles-4">
+      <article class="tile stat" data-reveal data-spot>
+        <span class="label">Block height</span>
+        <span class="stat-num mono" data-bind="block"><span class="skel skel-num"></span></span>
+        <span class="stat-sub">Head of the chain</span>
+      </article>
+      <article class="tile stat" data-reveal data-spot>
+        <span class="label">Endpoint status</span>
+        <span class="stat-num"><span class="pill pill-lg" data-health data-state="connecting" role="status"><i class="dot" aria-hidden="true"></i><span class="pill-text">Connecting</span></span></span>
+        <span class="stat-sub">Rechecked each poll</span>
+      </article>
+      <article class="tile stat" data-reveal data-spot>
+        <span class="label">Value locked</span>
+        <span class="stat-num mono" data-bind="tvl"><span class="skel skel-num"></span></span>
+        <span class="stat-sub">Listed across protocols</span>
+      </article>
+      <article class="tile stat" data-reveal data-spot>
+        <span class="label">Pairs tracked</span>
+        <span class="stat-num mono" data-bind="pairs"><span class="skel skel-num"></span></span>
+        <span class="stat-sub">Tagged solana</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="panel light" id="protocol">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <p class="eyebrow">03 &mdash; Design</p>
+      <h2 class="display-xl">Three moves.<br>One discipline.</h2>
+    </header>
+    <div class="tabs" data-reveal>
+      <div class="tablist" role="tablist" aria-label="Protocol design">
+        <button class="tab" role="tab" id="tab-open" aria-controls="panel-open" aria-selected="true" type="button">Open</button>
+        <button class="tab" role="tab" id="tab-vest" aria-controls="panel-vest" aria-selected="false" tabindex="-1" type="button">Vest</button>
+        <button class="tab" role="tab" id="tab-guard" aria-controls="panel-guard" aria-selected="false" tabindex="-1" type="button">Guard</button>
+        <span class="tab-ink" aria-hidden="true"></span>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="panel-open" aria-labelledby="tab-open">
+        <div class="tp-copy">
+          <h3 class="h3">Fair openings</h3>
+          <p>A launch begins with a published curve and a fixed window. No private allocation sits ahead of the crowd, and the curve can be read before anyone commits a coin.</p>
+        </div>
+        <dl class="spec">
+          <div><dt>Curve</dt><dd class="mono">Published up front</dd></div>
+          <div><dt>Window</dt><dd class="mono">Fixed at creation</dd></div>
+          <div><dt>Allocation</dt><dd class="mono">Public first</dd></div>
+        </dl>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="panel-vest" aria-labelledby="tab-vest" hidden>
+        <div class="tp-copy">
+          <h3 class="h3">Release on schedule</h3>
+          <p>Team and treasury units unlock in steps tied to block height rather than to a promise. Each step is an on-chain event that anyone can audit afterward.</p>
+        </div>
+        <dl class="spec">
+          <div><dt>Trigger</dt><dd class="mono">Block height</dd></div>
+          <div><dt>Cliff</dt><dd class="mono">Set per launch</dd></div>
+          <div><dt>Audit</dt><dd class="mono">Public events</dd></div>
+        </dl>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="panel-guard" aria-labelledby="tab-guard" hidden>
+        <div class="tp-copy">
+          <h3 class="h3">Ceilings, not trust</h3>
+          <p>Every wallet that moves funds for a launch carries a daily cap, a monthly cap and an allow list. Crossing a line pauses the action until a human signs.</p>
+        </div>
+        <dl class="spec">
+          <div><dt>Caps</dt><dd class="mono">Per day, per month</dd></div>
+          <div><dt>Scope</dt><dd class="mono">Allow list only</dd></div>
+          <div><dt>Override</dt><dd class="mono">Human sign-off</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel dark" id="flow">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <p class="eyebrow">04 &mdash; Flow</p>
+      <h2 class="display-xl">From idea to open market.</h2>
+    </header>
+    <div class="steps">
+      <article class="card step" data-reveal data-spot>
+        <span class="step-no mono" data-depth="0.06">01</span>
+        <h3 class="h3">Define</h3>
+        <p>Write the terms once: supply, curve shape, window length and vesting steps. The terms get hashed and pinned.</p>
+        <ul class="ticks mono"><li>supply fixed</li><li>curve hashed</li><li>terms pinned</li></ul>
+      </article>
+      <article class="card step" data-reveal data-spot>
+        <span class="step-no mono" data-depth="0.1">02</span>
+        <h3 class="h3">Seed</h3>
+        <p>Liquidity arrives in a single transaction that opens the window and starts the clock for everyone at once.</p>
+        <ul class="ticks mono"><li>one transaction</li><li>window opens</li><li>clock starts</li></ul>
+      </article>
+      <article class="card step" data-reveal data-spot>
+        <span class="step-no mono" data-depth="0.14">03</span>
+        <h3 class="h3">Release</h3>
+        <p>Vesting steps fire on block height while spending limits arm from block one.</p>
+        <ul class="ticks mono"><li>steps on height</li><li>ceilings armed</li><li>ledger open</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="panel light" id="pairs">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <p class="eyebrow">05 &mdash; Market</p>
+      <h2 class="display-xl">Top pairs,<br>ranked by flow.</h2>
+      <p class="sec-lede">Pairs carrying the solana tag, ordered by trading volume across the last day.</p>
+    </header>
+    <div class="board" data-reveal>
+      <div class="board-head mono" aria-hidden="true">
+        <span>#</span><span>Pair</span><span class="r">Price</span><span class="r">24h volume</span><span class="r hide-s">24h move</span>
+      </div>
+      <ol class="board-rows" id="pairs-list" aria-live="polite" aria-busy="true">
+        {{PAIR_SKELETONS}}
+      </ol>
+      <p class="board-note" id="pairs-note" hidden>No pairs reported right now.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel dark" id="guards">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <p class="eyebrow">06 &mdash; Guards</p>
+      <h2 class="display-xl">Limits written<br>into the rails.</h2>
+      <p class="sec-lede">Controls are part of the launch itself, not a layer someone bolts on afterward.</p>
+    </header>
+    <div class="tiles tiles-4">
+      <article class="tile feat" data-reveal data-spot>
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M4 18h16M7 18V9m5 9V5m5 13v-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h3 class="h3">Spend ceilings</h3>
+        <p>Each wallet gets a limit that resets by day and by month. A transfer beyond it sits parked until someone signs.</p>
+      </article>
+      <article class="tile feat" data-reveal data-spot>
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M5 12.5 10 17l9-10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 class="h3">Allow list</h3>
+        <p>Only named destinations can receive funds. Each call gets screened ahead of departure.</p>
+      </article>
+      <article class="tile feat" data-reveal data-spot>
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h3 class="h3">Freeze</h3>
+        <p>One switch stops treasury movement inside the block it is thrown.</p>
+      </article>
+      <article class="tile feat" data-reveal data-spot>
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M6 5h12M6 10h12M6 15h8M6 20h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h3 class="h3">Ledger</h3>
+        <p>Each transfer, refusal and rule change lands in a public record, hash included.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="panel light close" id="close">
+  <div class="wrap">
+    <div class="close-inner" data-reveal>
+      <p class="eyebrow">Before anything else</p>
+      <h2 class="display-xl">One address.<br>Verify it up top.</h2>
+      <p class="sec-lede">Only the address pinned at the top of this page counts. Anything pasted elsewhere, however convincing, is noise.</p>
+      <a class="btn btn-solid btn-lg" href="#top"><span>Back to the address</span><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot dark">
+  <div class="wrap-wide foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="#top" aria-label="Joggspad, back to top"><svg class="brand-glyph" viewBox="{{GLYPH_VB}}" width="20" height="28" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="{{GLYPH_D}}"/></svg><span class="brand-word">Joggspad</span></a>
+      <p class="foot-note">A launch pad for Solana, built around limits you can read.</p>
+    </div>
+    <nav class="foot-col" aria-label="Protocol"><h4 class="label">Protocol</h4><a href="#overview">Overview</a><a href="#chain">Anchor</a><a href="#pulse">Pulse</a><a href="#protocol">Design</a></nav>
+    <nav class="foot-col" aria-label="Build"><h4 class="label">Build</h4><a href="#flow">Flow</a><a href="#guards">Guards</a><a href="#pairs">Pairs</a>{{FOOT_CONTRACT}}</nav>
+    <nav class="foot-col" aria-label="Notes"><h4 class="label">Notes</h4><a href="#pairs">Data sources</a><a href="#close">Verify the address</a><a href="#top">Back to top</a></nav>
+  </div>
+  <div class="wrap-wide foot-base">
+    <span>&copy; Joggspad</span>
+    <span class="net mono"><span class="pill pill-foot" data-health data-state="connecting"><i class="dot" aria-hidden="true"></i><span class="pill-text">Connecting</span></span><span>Solana &middot; mainnet-beta</span></span>
+  </div>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
